@@ -1,0 +1,26 @@
+{
+  "name": "webserver-hmi",
+  "version": "2.0.0",
+  "description": "Webserver von eCARus",
+  "main": "",
+  "dependencies": {
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "eslint": "^6.8.0",
+    "node-dev": "^4.0.0",
+    "nodemon": "^1.19.4",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.lrz.de/eCARus/team-it/webserver-hmi.git"
+  },
+  "author": "eCARus IT",
+  "license": "ISC"
+}

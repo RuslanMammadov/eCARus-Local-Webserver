@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Maincontroller imitator</title>
+  <style>
+    .content {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+
+<body>
+  <script src='/socket.io/socket.io.js'></script>
+  <script src="frontend_script.js"></script> <!-- Will be executed immediately -->
+
+  <header>
+    <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;"> Maincontroller Imitator </h1>
+  </header>
+
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+    <h3>Automatic tests</h3>
+    <form action="javascript:test(test1TimeInput.value)">
+      <input type="submit" value="Test 1">
+      Time: <input type="number" value=30 id="test1TimeInput" style="width: 40px;">
+    </form>
+  </div>
+
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+    <h3>Message from backend as hexadecimal: Open console for more information</h3>
+    <div id="messageFromBackend"></div>
+  </div>
+
+
+
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+    <h3>Send messages to backend</h3>
+    <form action="javascript:sendHexString(message.value)">
+      <input type="text" id="message" value="00 20 00 00 00 00 00 00 93 00 00" style="width: 210px;">
+      <input type="submit" value="Send">
+      <p>
+        Message is >=11 bytes represented using hexadecimal notaion. Bytes can be separated using any symbols. The input
+        will be not validated!
+      </p>
+    </form>
+    <form action="javascript:send(idInput.value, valueInput.value, lastByte.value, firstByte.value)">
+      Alternative:
+      Value: <input type="number" id="valueInput" value=0 style="width: 60px;">
+      ID: <input type="text" id="idInput" value="0093" style="width: 60px;">
+      Last byte: <input type="number" id="lastByte" value=1 style="width: 40px;">
+      First byte: <input type="number" id="firstByte" value=0 style="width: 40px;">
+      <input type="submit" value="Send">
+    </form>
+  </div>
+
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+    <h3>Set values</h3>
+    <form action="javascript:setVelocity(velocityInput.value)">
+      Velocity: <input type="number" id="velocityInput">
+      <input type="submit" value="Update">
+    </form>
+    <form action="javascript:setAccumulatorRight(accumulatorRightInput.value)">
+      Accumulator right: <input type="number" id="accumulatorRightInput">
+      <input type="submit" value="Update">
+    </form>
+  </div>
+
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+    <h3>Run levels</h3>
+    <form action="javascript:setRunLevel(RUN_LEVEL.N)">
+      <input type="submit" value="N">
+    </form>
+    <form action="javascript:setRunLevel(RUN_LEVEL.D)">
+      <input type="submit" value="D">
+    </form>
+    <form action="javascript:setRunLevel(RUN_LEVEL.R)">
+      <input type="submit" value="R">
+    </form>
+  </div>
+
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+    <h3>Lights</h3>
+    <form action="javascript:setNoLight()">
+      <input type="submit" value="Lights Off">
+    </form>
+    <form action="javascript:setLight(LIGHT_BITS.WARNING_LIGHTS)">
+      <input type="submit" value="Warning lights">
+    </form>
+    <form action="javascript:setLight(LIGHT_BITS.INDICATOR_RIGHT)">
+      <input type="submit" value="Indicator right">
+    </form>
+    <form action="javascript:setLight(LIGHT_BITS.INDICATOR_LEFT)">
+      <input type="submit" value="Indicator left">
+    </form>
+    <form action="javascript:setLight(LIGHT_BITS.FAR_LIGHT)">
+      <input type="submit" value="Fernlicht">
+    </form>
+    <form action="javascript:setLight(LIGHT_BITS.NORMAL_LIGHT)">
+      <input type="submit" value="Abblendlicht">
+    </form>
+    <form action="javascript:setLight(LIGHT_BITS.LIGHT_STAND)">
+      <input type="submit" value="Standlicht">
+    </form>
+    <form action="javascript:setLight(LIGHT_BITS.FLASH_LIGHT)">
+      <input type="submit" value="Flash light">
+    </form>
+  </div>
+
+  <div style="font-family: Arial, Helvetica, sans-serif;">
+    <h3>Interfaces and Sensors</h3>
+    <form action="javascript:setInterface(INTERFACE_BITS.INTERFACE_1)">
+      <input type="submit" value="Interface 1">
+    </form>
+    <form action="javascript:setInterface(INTERFACE_BITS.INTERFACE_2)">
+      <input type="submit" value="Interface 2">
+    </form>
+    </form>
+
+  </div>
+
+
+</body>
+
+</html>

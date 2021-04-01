@@ -1,0 +1,19 @@
+{
+  "name": "maincontroller_imitator",
+  "version": "1.0.0",
+  "description": "For testing purposes: allows to send messages to backend like MC",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js&",
+    "debug": "node-dev --respawn app.js&"
+  },
+  "author": "Ruslan Mammadov",
+  "license": "ISC",
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "node-dev": "^4.0.0",
+    "socket.io": "^2.3.0"
+  }
+}
